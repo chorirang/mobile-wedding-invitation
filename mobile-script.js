@@ -216,8 +216,21 @@ function openTmap() {
     }
 }
 
+// 모바일 브라우저 주소창 높이 변동 문제 해결
+function fixViewportHeight() {
+    const coverSection = document.querySelector('.cover-section');
+    if (coverSection) {
+        // 초기 로드 시 실제 뷰포트 높이를 측정하여 고정
+        const vh = window.innerHeight;
+        coverSection.style.height = `${vh}px`;
+    }
+}
+
 // 페이지 로드 시 실행
 document.addEventListener('DOMContentLoaded', () => {
+    // 뷰포트 높이 고정
+    fixViewportHeight();
+
     // 갤러리 생성
     createGallery();
 
@@ -225,4 +238,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimation();
 
     console.log('모바일 청첩장이 로드되었습니다');
+});
+
+// 화면 방향 변경 시에만 높이 재조정
+window.addEventListener('orientationchange', () => {
+    setTimeout(fixViewportHeight, 100);
 });
