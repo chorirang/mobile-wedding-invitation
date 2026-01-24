@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="이영재 ❤️ 홍선화의 결혼식에 초대합니다">
-    <title>이영재 ❤️ 홍선화 결혼합니다</title>
+    <title>이영재 ♥ 홍선화 결혼합니다</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Playfair+Display:wght@300;400;500&family=Nanum+Myeongjo:wght@400;700&family=Noto+Serif+KR:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="mobile-style.css">
 </head>
 <body>
+    <!-- 스플래시 화면 -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-overlay"></div>
+        <div class="splash-content">
+            <div class="splash-line"></div>
+            <p class="splash-text" id="splashText"></p>
+            <p class="splash-date">2026. 05. 16</p>
+        </div>
+    </div>
+
     <div class="mobile-container">
         <!-- 커버 이미지 섹션 -->
         <section class="cover-section">
@@ -30,14 +40,18 @@
         <section class="main-info-section">
             <div class="couple-names">
                 <span class="groom-name">이영재</span>
-                <span class="name-divider">&</span>
+                <span class="name-divider">
+                    <svg class="heart-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                </span>
                 <span class="bride-name">홍선화</span>
             </div>
 
             <div class="wedding-date-info">
                 <p class="date-eng">2026. 05. 16. SAT</p>
                 <p class="time-info">오후 4시 20분</p>
-                <p class="venue-name">라비니움 4층 블룸홀</p>
+                <p class="venue-name">천호 라비니움 4층 블룸홀</p>
             </div>
         </section>
 
@@ -73,10 +87,17 @@
 
                 <div class="parent-info">
                     <span class="side-label">신부</span>
-                    <span class="parent-names">홍아버지 · 홍어머니</span>
+                    <span class="parent-names">홍승민 · 김혜정</span>
                     <span class="relation">의 장녀</span>
                     <strong class="child-name">홍선화</strong>
                 </div>
+            </div>
+        </section>
+
+        <!-- GIF 이미지 섹션 -->
+        <section class="gif-section">
+            <div class="gif-container">
+                <img data-src="wedding-animation.gif" alt="결혼 애니메이션" class="gif-image lazy-gif">
             </div>
         </section>
 
@@ -188,16 +209,16 @@
                 <div class="transport-item">
                     <div class="transport-icon">🚇</div>
                     <div class="transport-detail">
-                        <h5>지하철</h5>
-                        <p>5호선 8호선 천호역 10번 출구 바로 앞</p>
+                        <h5>대중교통</h5>
+                        <p>지하철 5호선 8호선 천호역 10번 출구 바로 앞</p>
                     </div>
                 </div>
 
                 <div class="transport-item">
                     <div class="transport-icon">🚌</div>
                     <div class="transport-detail">
-                        <h5>버스</h5>
-                        <p>강남역 정류장 하차<br>간선: 146, 242, 472</p>
+                        <h5>셔틀버스</h5>
+                        <p>천호지하공영주차장(천호입구) 내부에서 탑승 <br>기둥번호 A,B,C,D 20 - 60번 사이 운행</p>
                     </div>
                 </div>
 
@@ -205,8 +226,19 @@
                     <div class="transport-icon">🚗</div>
                     <div class="transport-detail">
                         <h5>자가용</h5>
-                        <p>지하 1~3층 주차 가능 (3시간 무료)</p>
+                        <p><strong>공영주차장</strong> 이용 부탁드립니다.
+                        <br>천호역 6번 출구 앞 천호지하공영주차장(천호입구) 지하 1,2층
+                        <br>기둥번호 A,B,C,D 20 - 60번 사이 주차
+                        </p>
                     </div>
+                </div>
+            </div>
+
+            <!-- 주차장 안내 사진 -->
+            <div class="parking-guide">
+                <h5 class="parking-guide-title">주차장 안내도</h5>
+                <div class="parking-image-container">
+                    <img src="parking-guide.jpg" alt="주차장 안내도" class="parking-image">
                 </div>
             </div>
         </section>
@@ -233,9 +265,9 @@
                     <div class="account-item">
                         <div class="account-info">
                             <p class="account-name">신랑 이영재</p>
-                            <p class="account-detail">카카오뱅크 1234-56-789012</p>
+                            <p class="account-detail">카카오뱅크 3333-03-4162566</p>
                         </div>
-                        <button class="btn-account-copy" onclick="copyAccount('1234567890012')">
+                        <button class="btn-account-copy" onclick="copyAccount('3333034162566')">
                             복사
                         </button>
                     </div>
@@ -243,9 +275,9 @@
                     <div class="account-item">
                         <div class="account-info">
                             <p class="account-name">아버지 이경환</p>
-                            <p class="account-detail">신한은행 110-123-456789</p>
+                            <p class="account-detail">카카오뱅크 3333-03-4162566</p>
                         </div>
-                        <button class="btn-account-copy" onclick="copyAccount('110123456789')">
+                        <button class="btn-account-copy" onclick="copyAccount('3333034162566')">
                             복사
                         </button>
                     </div>

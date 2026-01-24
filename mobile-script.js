@@ -177,42 +177,45 @@ function initScrollAnimation() {
 // 지도 앱 열기 함수들
 function openKakaoMap() {
     const venueName = '라비니움';
-    const address = '서울 송파구 천호대로 996';
+    const address = '서울특별시 송파구 천호대로 996';
 
-    // 카카오맵 앱 URL (모바일에서 앱 실행, PC에서 웹 실행)
-    const kakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent(venueName + ' ' + address)}`;
+    // 카카오맵 - 장소명과 주소로 검색
+    // place로 검색하면 더 정확한 장소 표시
+    const kakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent(venueName + ' 천호역')}`;
 
     window.open(kakaoMapUrl, '_blank');
 }
 
 function openNaverMap() {
     const venueName = '라비니움';
-    const address = '서울 송파구 천호대로 996';
+    const address = '서울특별시 송파구 천호대로 996';
 
-    // 네이버 지도 URL (모바일에서 앱 자동 실행, PC에서 웹 실행)
-    const naverMapUrl = `https://map.naver.com/v5/search/${encodeURIComponent(venueName + ' ' + address)}`;
+    // 네이버 지도 앱/웹 URL
+    const naverMapUrl = `https://map.naver.com/p/search/${encodeURIComponent(venueName + ' ' + address)}`;
 
     window.open(naverMapUrl, '_blank');
 }
 
 function openTmap() {
     const venueName = '라비니움';
-    const address = '서울 송파구 천호대로 996';
+    const address = '서울특별시 송파구 천호대로 996';
 
-    // 티맵 URL (모바일에서만 앱 실행, PC에서는 다운로드 페이지)
-    const tmapUrl = `https://tmap.life/0d75b7d1`;
+    // 티맵 앱 스킴 - 장소명으로 검색
+    const tmapScheme = `tmap://search?name=${encodeURIComponent(venueName + ' 천호역')}`;
 
-    // 티맵 앱 스킴 (앱이 설치된 경우)
-    const tmapScheme = `tmap://search?name=${encodeURIComponent(venueName)}`;
-
-    // 모바일인 경우 앱 스킴 시도, 실패하면 웹으로
+    // 모바일에서는 앱 스킴 시도
     if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        // 앱 스킴 시도
         window.location.href = tmapScheme;
+
+        // 1.5초 후에도 페이지가 그대로면 앱이 없는 것이므로 웹으로 연결
         setTimeout(() => {
-            window.open(tmapUrl, '_blank');
+            // 앱이 없는 경우 티맵 다운로드 페이지로
+            window.open('https://www.tmap.co.kr/', '_blank');
         }, 1500);
     } else {
-        window.open(tmapUrl, '_blank');
+        // PC에서는 티맵 웹 페이지로 연결
+        window.open('https://www.tmap.co.kr/', '_blank');
     }
 }
 
@@ -226,8 +229,76 @@ function fixViewportHeight() {
     }
 }
 
+// 스플래시 텍스트 한 글자씩 애니메이션
+function animateSplashText() {
+    const text = "Welcome to our wedding";
+    const textElement = document.getElementById('splashText');
+
+    if (!textElement) return;
+
+    // 텍스트를 span으로 감싸기
+    textElement.innerHTML = '';
+
+    // 각 글자를 span으로 감싸서 추가
+    text.split('').forEach((char, index) => {
+        const span = document.createElement('span');
+        span.textContent = char === ' ' ? '\u00A0' : char; // 공백 처리
+        span.style.animationDelay = `${1.0 + (index * 0.08)}s`; // 1초 후 시작, 각 글자마다 0.08초 간격
+        textElement.appendChild(span);
+    });
+}
+
+// 스플래시 화면 제거
+function removeSplashScreen() {
+    const splashScreen = document.getElementById('splashScreen');
+    if (splashScreen) {
+        // 4.8초 후 스플래시 화면 완전히 제거 (애니메이션 완료 후)
+        setTimeout(() => {
+            splashScreen.classList.add('hidden');
+        }, 4800);
+    }
+}
+
+// GIF 이미지 지연 로딩
+function initLazyGif() {
+    const lazyGif = document.querySelector('.lazy-gif');
+
+    if (!lazyGif) return;
+
+    const gifObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // GIF가 화면에 보일 때 src 설정
+                const img = entry.target;
+                const src = img.getAttribute('data-src');
+
+                if (src) {
+                    img.src = src;
+                    img.classList.remove('lazy-gif');
+                    img.classList.add('gif-loaded');
+                }
+
+                // 한 번 로드되면 관찰 중지
+                gifObserver.unobserve(img);
+            }
+        });
+    }, {
+        root: null,
+        threshold: 0.1,
+        rootMargin: '50px'
+    });
+
+    gifObserver.observe(lazyGif);
+}
+
 // 페이지 로드 시 실행
 document.addEventListener('DOMContentLoaded', () => {
+    // 스플래시 텍스트 애니메이션
+    animateSplashText();
+
+    // 스플래시 화면 시작
+    removeSplashScreen();
+
     // 뷰포트 높이 고정
     fixViewportHeight();
 
@@ -236,6 +307,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 스크롤 애니메이션 초기화
     initScrollAnimation();
+
+    // GIF 지연 로딩 초기화
+    initLazyGif();
 
     console.log('모바일 청첩장이 로드되었습니다');
 });
