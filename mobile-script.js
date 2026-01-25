@@ -107,19 +107,61 @@ function fallbackCopy(text) {
 
 // 카카오톡 공유
 function shareKakao() {
+    const shareData = {
+        title: '이영재 ❤️ 홍선화 결혼식에 초대합니다',
+        text: '2026년 5월 16일 토요일 오후 4시 20분\n라비니움 4층 블룸홀',
+        url: window.location.href
+    };
+
+    // Web Share API 지원 여부 확인
     if (navigator.share) {
-        navigator.share({
-            title: '이영재 ❤️ 홍선화 결혼식에 초대합니다',
-            text: '2026년 5월 16일 토요일 오후 4시 20분\n라비니움 4층 블룸홀',
-            url: window.location.href
-        }).then(() => {
+        navigator.share(shareData).then(() => {
             console.log('공유 성공');
         }).catch((error) => {
-            console.log('공유 취소:', error);
+            // 사용자가 취소한 경우는 무시
+            if (error.name !== 'AbortError') {
+                // 공유 실패 시 링크 복사로 대체
+                copyLinkWithMessage();
+            }
         });
     } else {
-        showToast('이 브라우저는 공유 기능을 지원하지 않습니다');
+        // Web Share API 미지원 시 링크 복사
+        copyLinkWithMessage();
     }
+}
+
+// 링크 복사 후 안내 메시지
+function copyLinkWithMessage() {
+    const url = window.location.href;
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+            showToast('링크가 복사되었습니다. 카카오톡에 붙여넣기 해주세요!');
+        }).catch(() => {
+            fallbackCopyWithMessage(url);
+        });
+    } else {
+        fallbackCopyWithMessage(url);
+    }
+}
+
+// Fallback 복사 후 안내 메시지
+function fallbackCopyWithMessage(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.select();
+
+    try {
+        document.execCommand('copy');
+        showToast('링크가 복사되었습니다. 카카오톡에 붙여넣기 해주세요!');
+    } catch (err) {
+        showToast('링크 복사에 실패했습니다');
+    }
+
+    document.body.removeChild(textArea);
 }
 
 // 링크 복사
