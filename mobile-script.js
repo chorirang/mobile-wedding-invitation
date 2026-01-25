@@ -286,14 +286,9 @@ function openTmap() {
     }
 }
 
-// 모바일 브라우저 주소창 높이 변동 문제 해결
+// 모바일 브라우저 주소창 높이 변동 문제 해결 (aspect-ratio 사용으로 더 이상 불필요)
 function fixViewportHeight() {
-    const coverSection = document.querySelector('.cover-section');
-    if (coverSection) {
-        // 초기 로드 시 실제 뷰포트 높이를 측정하여 고정 (77% 높이)
-        const vh = window.innerHeight * 0.77;
-        coverSection.style.height = `${vh}px`;
-    }
+    // aspect-ratio: 2/3 사용으로 높이 자동 계산
 }
 
 // 스플래시 텍스트 한 글자씩 애니메이션
