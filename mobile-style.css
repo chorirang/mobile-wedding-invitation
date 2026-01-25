@@ -625,6 +625,7 @@ section {
     gap: 0;
     margin-bottom: 20px;
     scroll-behavior: smooth;
+    touch-action: pan-x; /* 확대 방지, 좌우 스크롤만 허용 */
 }
 
 .gallery-slider::-webkit-scrollbar {
@@ -658,6 +659,8 @@ section {
     -ms-user-select: none;
     display: block;
     margin: 0 auto;
+    touch-action: none; /* 확대 방지 */
+    -webkit-touch-callout: none; /* iOS 길게 누르기 방지 */
 }
 
 /* 도트 인디케이터 */
