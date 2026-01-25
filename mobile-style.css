@@ -647,8 +647,9 @@ section {
 .gallery-slide img {
     width: calc(100% - 40px);
     max-width: 440px;
-    height: 450px;
-    object-fit: cover;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
     border-radius: 12px;
     pointer-events: none; /* 클릭 방지 */
     user-select: none; /* 선택 방지 */
