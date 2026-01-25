@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="이영재 ❤️ 홍선화의 결혼식에 초대합니다">
+    <title>이영재 ❤️ 홍선화 결혼합니다</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 카카오 지도 API -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_KAKAO_APP_KEY"></script>
+</head>
+<body>
+    <!-- 상단 인트로 -->
+    <section class="intro-section">
+        <div class="intro-content fade-in">
+            <p class="intro-label">WEDDING INVITATION</p>
+            <div class="divider-line"></div>
+        </div>
+    </section>
+
+    <!-- 메인 이미지 섹션 -->
+    <section class="main-section">
+        <div class="main-image-wrapper">
+            <img src="images/main-photo.jpg" alt="메인 사진" class="main-photo">
+        </div>
+
+        <div class="couple-names">
+            <div class="name-container">
+                <span class="groom-name">이영재</span>
+                <span class="name-divider">&</span>
+                <span class="bride-name">홍선화</span>
+            </div>
+        </div>
+
+        <div class="wedding-date-info">
+            <p class="date-eng">2026. 05. 16. SAT</p>
+            <p class="time-info">오후 4시 20분</p>
+            <p class="venue-name">라비니움 4층 블룸홀</p>
+        </div>
+    </section>
+
+    <!-- 인사말 섹션 -->
+    <section class="greeting-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="divider-short"></div>
+                <h3 class="section-title">모시는 글</h3>
+                <div class="divider-short"></div>
+            </div>
+
+            <div class="greeting-text">
+                <p>
+                    평생을 함께할 반려자를 만나<br>
+                    서로의 믿음과 사랑으로<br>
+                    한 가정을 이루게 되었습니다.
+                </p>
+                <p>
+                    저희 두 사람이 사랑의 이름으로<br>
+                    지켜나갈 수 있도록<br>
+                    앞날을 축복해 주시면 감사하겠습니다.
+                </p>
+            </div>
+
+            <!-- 혼주 정보 -->
+            <div class="parents-section">
+                <div class="parent-info">
+                    <div class="parent-side">
+                        <span class="side-label">신랑</span>
+                        <span class="parent-names">이경환</span>
+                        <span class="relation">의 장남</span>
+                        <strong class="child-name">이영재</strong>
+                    </div>
+                </div>
+
+                <div class="parent-info">
+                    <div class="parent-side">
+                        <span class="side-label">신부</span>
+                        <span class="parent-names">김아버지 · 김어머니</span>
+                        <span class="relation">의 장녀</span>
+                        <strong class="child-name">홍선화</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 캘린더 섹션 -->
+    <section class="calendar-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="divider-short"></div>
+                <h3 class="section-title">Wedding Day</h3>
+                <div class="divider-short"></div>
+            </div>
+
+            <div class="calendar-display">
+                <div class="calendar-header">
+                    <span class="calendar-month">May 2026</span>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-day-header">SUN</div>
+                    <div class="calendar-day-header">MON</div>
+                    <div class="calendar-day-header">TUE</div>
+                    <div class="calendar-day-header">WED</div>
+                    <div class="calendar-day-header">THU</div>
+                    <div class="calendar-day-header">FRI</div>
+                    <div class="calendar-day-header">SAT</div>
+
+                    <!-- 5월 1일은 금요일이므로 앞에 빈 칸 5개 -->
+                    <div class="calendar-date empty"></div>
+                    <div class="calendar-date empty"></div>
+                    <div class="calendar-date empty"></div>
+                    <div class="calendar-date empty"></div>
+                    <div class="calendar-date empty"></div>
+                    <div class="calendar-date">1</div>
+                    <div class="calendar-date">2</div>
+                    <div class="calendar-date">3</div>
+                    <div class="calendar-date">4</div>
+                    <div class="calendar-date">5</div>
+                    <div class="calendar-date">6</div>
+                    <div class="calendar-date">7</div>
+                    <div class="calendar-date">8</div>
+                    <div class="calendar-date">9</div>
+                    <div class="calendar-date">10</div>
+                    <div class="calendar-date">11</div>
+                    <div class="calendar-date">12</div>
+                    <div class="calendar-date">13</div>
+                    <div class="calendar-date">14</div>
+                    <div class="calendar-date">15</div>
+                    <div class="calendar-date wedding-day">16</div>
+                    <div class="calendar-date">17</div>
+                    <div class="calendar-date">18</div>
+                    <div class="calendar-date">19</div>
+                    <div class="calendar-date">20</div>
+                    <div class="calendar-date">21</div>
+                    <div class="calendar-date">22</div>
+                    <div class="calendar-date">23</div>
+                    <div class="calendar-date">24</div>
+                    <div class="calendar-date">25</div>
+                    <div class="calendar-date">26</div>
+                    <div class="calendar-date">27</div>
+                    <div class="calendar-date">28</div>
+                    <div class="calendar-date">29</div>
+                    <div class="calendar-date">30</div>
+                    <div class="calendar-date">31</div>
+                </div>
+            </div>
+
+            <button class="btn-add-calendar" onclick="addToCalendar()">
+                캘린더에 일정 추가하기
+            </button>
+        </div>
+    </section>
+
+    <!-- 갤러리 섹션 -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="divider-short"></div>
+                <h3 class="section-title">Gallery</h3>
+                <div class="divider-short"></div>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- 처음 보여질 9개 사진 -->
+                <div class="gallery-item" onclick="openGallery(0)">
+                    <img src="images/photo1.jpg" alt="갤러리 사진 1">
+                </div>
+                <div class="gallery-item" onclick="openGallery(1)">
+                    <img src="images/photo2.jpg" alt="갤러리 사진 2">
+                </div>
+                <div class="gallery-item" onclick="openGallery(2)">
+                    <img src="images/photo3.jpg" alt="갤러리 사진 3">
+                </div>
+                <div class="gallery-item" onclick="openGallery(3)">
+                    <img src="images/photo4.jpg" alt="갤러리 사진 4">
+                </div>
+                <div class="gallery-item" onclick="openGallery(4)">
+                    <img src="images/photo5.jpg" alt="갤러리 사진 5">
+                </div>
+                <div class="gallery-item" onclick="openGallery(5)">
+                    <img src="images/photo6.jpg" alt="갤러리 사진 6">
+                </div>
+                <div class="gallery-item" onclick="openGallery(6)">
+                    <img src="images/photo7.jpg" alt="갤러리 사진 7">
+                </div>
+                <div class="gallery-item" onclick="openGallery(7)">
+                    <img src="images/photo8.jpg" alt="갤러리 사진 8">
+                </div>
+                <div class="gallery-item" onclick="openGallery(8)">
+                    <img src="images/photo9.jpg" alt="갤러리 사진 9">
+                </div>
+
+                <!-- 더보기 후 보여질 사진들 (숨김) -->
+                <div class="gallery-item hidden" onclick="openGallery(9)">
+                    <img src="images/photo10.jpg" alt="갤러리 사진 10">
+                </div>
+                <div class="gallery-item hidden" onclick="openGallery(10)">
+                    <img src="images/photo11.jpg" alt="갤러리 사진 11">
+                </div>
+                <div class="gallery-item hidden" onclick="openGallery(11)">
+                    <img src="images/photo12.jpg" alt="갤러리 사진 12">
+                </div>
+                <div class="gallery-item hidden" onclick="openGallery(12)">
+                    <img src="images/photo13.jpg" alt="갤러리 사진 13">
+                </div>
+                <div class="gallery-item hidden" onclick="openGallery(13)">
+                    <img src="images/photo14.jpg" alt="갤러리 사진 14">
+                </div>
+                <div class="gallery-item hidden" onclick="openGallery(14)">
+                    <img src="images/photo15.jpg" alt="갤러리 사진 15">
+                </div>
+            </div>
+
+            <button class="btn-gallery-more" id="galleryMoreBtn" onclick="toggleGallery()">
+                더보기 <span id="moreBtnIcon">+</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- 갤러리 모달 -->
+    <div id="galleryModal" class="modal">
+        <span class="close" onclick="closeGallery()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-nav">
+            <button class="modal-prev" onclick="prevImage()">&#10094;</button>
+            <button class="modal-next" onclick="nextImage()">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- 장소 안내 섹션 -->
+    <section class="location-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="divider-short"></div>
+                <h3 class="section-title">오시는 길</h3>
+                <div class="divider-short"></div>
+            </div>
+
+            <div class="location-info">
+                <h4 class="location-name">그랜드컨벤션 3층 그랜드홀</h4>
+                <p class="location-address">서울 강남구 테헤란로 123</p>
+                <p class="location-tel">Tel. 02-1234-5678</p>
+            </div>
+
+            <!-- 카카오맵 -->
+            <div id="map" class="map-container"></div>
+
+            <!-- 길찾기 버튼 -->
+            <div class="map-buttons">
+                <button class="btn-map" onclick="openKakaoMap()">
+                    <span>카카오맵</span>
+                </button>
+                <button class="btn-map" onclick="openNaverMap()">
+                    <span>네이버지도</span>
+                </button>
+                <button class="btn-map" onclick="openTMap()">
+                    <span>티맵</span>
+                </button>
+            </div>
+
+            <!-- 교통편 안내 -->
+            <div class="transport-info">
+                <div class="transport-item">
+                    <div class="transport-icon">🚇</div>
+                    <div class="transport-detail">
+                        <h5>지하철</h5>
+                        <p>2호선 강남역 3번 출구 도보 5분</p>
+                    </div>
+                </div>
+
+                <div class="transport-item">
+                    <div class="transport-icon">🚌</div>
+                    <div class="transport-detail">
+                        <h5>버스</h5>
+                        <p>강남역 정류장 하차<br>
+                        간선: 146, 242, 472 | 지선: 4319, 6411</p>
+                    </div>
+                </div>
+
+                <div class="transport-item">
+                    <div class="transport-icon">🚗</div>
+                    <div class="transport-detail">
+                        <h5>자가용</h5>
+                        <p>지하 1~3층 주차 가능 (3시간 무료)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 마음 전하실 곳 섹션 -->
+    <section class="account-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="divider-short"></div>
+                <h3 class="section-title">마음 전하실 곳</h3>
+                <div class="divider-short"></div>
+            </div>
+
+            <p class="account-desc">
+                참석이 어려우신 분들을 위해<br>
+                계좌번호를 안내드립니다.
+            </p>
+
+            <div class="account-group">
+                <div class="account-header">
+                    <span>신랑측</span>
+                </div>
+
+                <div class="account-list">
+                    <div class="account-item">
+                        <div class="account-info">
+                            <p class="account-name">신랑 홍길동</p>
+                            <p class="account-detail">카카오뱅크 1234-56-789012</p>
+                        </div>
+                        <button class="btn-account-copy" onclick="copyAccount('1234567890012')">
+                            복사
+                        </button>
+                    </div>
+
+                    <div class="account-item">
+                        <div class="account-info">
+                            <p class="account-name">아버지 홍아버지</p>
+                            <p class="account-detail">신한은행 110-123-456789</p>
+                        </div>
+                        <button class="btn-account-copy" onclick="copyAccount('110123456789')">
+                            복사
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="account-group">
+                <div class="account-header">
+                    <span>신부측</span>
+                </div>
+
+                <div class="account-list">
+                    <div class="account-item">
+                        <div class="account-info">
+                            <p class="account-name">신부 김영희</p>
+                            <p class="account-detail">국민은행 987-65-432101</p>
+                        </div>
+                        <button class="btn-account-copy" onclick="copyAccount('98765432101')">
+                            복사
+                        </button>
+                    </div>
+
+                    <div class="account-item">
+                        <div class="account-info">
+                            <p class="account-name">아버지 김아버지</p>
+                            <p class="account-detail">우리은행 1002-234-567890</p>
+                        </div>
+                        <button class="btn-account-copy" onclick="copyAccount('1002234567890')">
+                            복사
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 공유하기 섹션 -->
+    <section class="share-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="divider-short"></div>
+                <h3 class="section-title">Share</h3>
+                <div class="divider-short"></div>
+            </div>
+
+            <div class="share-buttons">
+                <button class="btn-share kakao" onclick="shareKakao()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3c5.799 0 10.5 3.664 10.5 8.185 0 4.52-4.701 8.184-10.5 8.184a13.5 13.5 0 0 1-1.727-.11l-4.408 2.883c-.501.265-.678.236-.472-.413l.892-3.678c-2.88-1.46-4.785-3.99-4.785-6.866C1.5 6.665 6.201 3 12 3zm5.907 8.06l1.47-1.424a.472.472 0 0 0-.656-.678l-1.928 1.866V9.282a.472.472 0 0 0-.944 0v2.557a.471.471 0 0 0 0 .222V13.5a.472.472 0 0 0 .944 0v-1.363l.427-.413 1.428 2.033a.472.472 0 1 0 .773-.543l-1.514-2.155zm-2.958 1.924h-1.46V9.297a.472.472 0 0 0-.943 0v4.159c0 .26.21.472.471.472h1.932a.472.472 0 1 0 0-.944zm-5.857-1.092l.696-1.707.638 1.707H9.092zm2.523.488l.002-.016a.469.469 0 0 0-.127-.32l-1.046-2.8a.69.69 0 0 0-.627-.474.696.696 0 0 0-.653.447l-1.661 4.075a.472.472 0 0 0 .874.357l.33-.813h2.07l.299.8a.472.472 0 1 0 .884-.33l-.345-.926zM8.293 9.302a.472.472 0 0 0-.471-.472H4.577a.472.472 0 1 0 0 .944h1.16v3.736a.472.472 0 0 0 .944 0V9.774h1.14c.261 0 .472-.212.472-.472z"/>
+                    </svg>
+                    <span>카카오톡 공유</span>
+                </button>
+
+                <button class="btn-share url" onclick="copyLink()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                    </svg>
+                    <span>링크 복사</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 감사 메시지 -->
+    <section class="thanks-section">
+        <div class="container">
+            <div class="thanks-content">
+                <p class="thanks-text">
+                    소중한 걸음 함께해 주셔서<br>
+                    감사합니다.
+                </p>
+                <div class="divider-line"></div>
+                <p class="couple-names-small">홍길동 · 김영희</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <p>&copy; 2026 Wedding Invitation</p>
+    </footer>
+
+    <!-- 토스트 알림 -->
+    <div id="toast"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+    <!-- 카카오 SDK -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        if (typeof Kakao !== 'undefined') {
+            Kakao.init('YOUR_KAKAO_JS_KEY');
+        }
+    </script>
+</body>
+</html>
