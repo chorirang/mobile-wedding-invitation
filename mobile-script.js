@@ -172,11 +172,30 @@ function copyLink() {
         navigator.clipboard.writeText(url).then(() => {
             showToast('링크가 복사되었습니다');
         }).catch(() => {
-            fallbackCopy(url);
+            fallbackCopyLink(url);
         });
     } else {
-        fallbackCopy(url);
+        fallbackCopyLink(url);
     }
+}
+
+// 링크 복사용 폴백
+function fallbackCopyLink(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.select();
+
+    try {
+        document.execCommand('copy');
+        showToast('링크가 복사되었습니다');
+    } catch (err) {
+        showToast('복사 실패. 수동으로 복사해주세요');
+    }
+
+    document.body.removeChild(textArea);
 }
 
 // 토스트 알림 표시
