@@ -107,25 +107,31 @@ function fallbackCopy(text) {
 
 // 카카오톡 공유
 function shareKakao() {
-    const shareData = {
-        title: '이영재 ❤️ 홍선화 결혼식에 초대합니다',
-        text: '2026년 5월 16일 토요일 오후 4시 20분\n라비니움 4층 블룸홀',
-        url: window.location.href
-    };
-
-    // Web Share API 지원 여부 확인
-    if (navigator.share) {
-        navigator.share(shareData).then(() => {
-            console.log('공유 성공');
-        }).catch((error) => {
-            // 사용자가 취소한 경우는 무시
-            if (error.name !== 'AbortError') {
-                // 공유 실패 시 링크 복사로 대체
-                copyLinkWithMessage();
-            }
+    // 카카오 SDK가 로드되었는지 확인
+    if (typeof Kakao !== 'undefined' && Kakao.isInitialized()) {
+        Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: '이영재 ❤️ 홍선화 결혼식에 초대합니다',
+                description: '2026년 5월 16일 토요일 오후 4시 20분\n천호 라비니움 4층 블룸홀',
+                imageUrl: 'https://seonhwa-youngjae.site/wedding-animation.gif',
+                link: {
+                    mobileWebUrl: window.location.href,
+                    webUrl: window.location.href
+                }
+            },
+            buttons: [
+                {
+                    title: '청첩장 보기',
+                    link: {
+                        mobileWebUrl: window.location.href,
+                        webUrl: window.location.href
+                    }
+                }
+            ]
         });
     } else {
-        // Web Share API 미지원 시 링크 복사
+        // 카카오 SDK 미지원 시 링크 복사
         copyLinkWithMessage();
     }
 }
