@@ -341,17 +341,20 @@ body.scroll-enabled {
     width: 90%;
     height: 90%;
     opacity: 0;
-    animation: handwritingReveal 2.5s ease-out 5.5s forwards;
+    animation: handwritingReveal 3s ease-in-out 5.5s forwards;
 }
 
 @keyframes handwritingReveal {
     0% {
         opacity: 0;
-        clip-path: inset(0 100% 0 0);
+        clip-path: polygon(0 0, 0 0, 0 0);
+    }
+    20% {
+        opacity: 1;
     }
     100% {
         opacity: 1;
-        clip-path: inset(0 0 0 0);
+        clip-path: polygon(0 0, 200% 0, 0 200%);
     }
 }
 
