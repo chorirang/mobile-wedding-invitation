@@ -315,36 +315,22 @@ function removeSplashScreen() {
     }
 }
 
-// GIF 이미지 지연 로딩
+// GIF 이미지 로딩 (스플래시 종료 후)
 function initLazyGif() {
     const lazyGif = document.querySelector('.lazy-gif');
 
     if (!lazyGif) return;
 
-    const gifObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // GIF가 화면에 보일 때 src 설정
-                const img = entry.target;
-                const src = img.getAttribute('data-src');
+    // 스플래시 종료 후 (4.8초) GIF 로드
+    setTimeout(() => {
+        const src = lazyGif.getAttribute('data-src');
 
-                if (src) {
-                    img.src = src;
-                    img.classList.remove('lazy-gif');
-                    img.classList.add('gif-loaded');
-                }
-
-                // 한 번 로드되면 관찰 중지
-                gifObserver.unobserve(img);
-            }
-        });
-    }, {
-        root: null,
-        threshold: 0.1,
-        rootMargin: '50px'
-    });
-
-    gifObserver.observe(lazyGif);
+        if (src) {
+            lazyGif.src = src;
+            lazyGif.classList.remove('lazy-gif');
+            lazyGif.classList.add('gif-loaded');
+        }
+    }, 4800);
 }
 
 // 페이지 로드 시 실행
