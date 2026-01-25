@@ -1,18 +1,17 @@
 // 갤러리 슬라이더 변수
 let currentSlide = 0;
 const imageUrls = [
-    'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1529636798458-92182e662485?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=800&h=1000&fit=crop',
-    'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&h=1000&fit=crop'
+    '나무1.jpg',
+    '나무2.jpg',
+    '나무3-2.jpg',
+    '나무3.jpg',
+    '나무4.jpg',
+    '나무5.jpg',
+    '바다1-2.jpg',
+    '바다1.jpg',
+    '바다2.jpg',
+    '바다3-2.jpg',
+    '바다4.jpg'
 ];
 const totalSlides = imageUrls.length;
 
