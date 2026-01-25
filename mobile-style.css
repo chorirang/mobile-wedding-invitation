@@ -539,6 +539,27 @@ section {
     text-align: right;
 }
 
+/* 손잡은 사진 섹션 */
+.hands-section {
+    background-color: #f8faf7;
+    padding: 40px 20px;
+}
+
+.hands-image-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hands-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* GIF 이미지 섹션 */
 .gif-section {
     background-color: white;
