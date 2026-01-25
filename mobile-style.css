@@ -188,15 +188,16 @@ body.scroll-enabled {
 }
 
 .splash-text {
-    font-family: 'Alex Brush', 'Great Vibes', cursive;
-    font-size: 36px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
     color: #ffffff;
     letter-spacing: 2px;
     margin-bottom: 20px;
     opacity: 1;
-    font-weight: 400;
+    font-weight: 300;
     min-height: 50px;
     text-shadow: 0 2px 8px rgba(107, 125, 95, 0.3);
+    text-align: center;
     white-space: nowrap;
 }
 
@@ -471,7 +472,7 @@ section {
 }
 
 .section-title {
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 500;
     color: #333;
     font-family: 'Nanum Myeongjo', serif;
@@ -482,12 +483,33 @@ section {
     background-color: #f8faf7;
 }
 
+.greeting-decoration {
+    display: block;
+    width: 80px;
+    height: auto;
+    margin: 0 auto 20px;
+    opacity: 0;
+    animation: floatFadeIn 1.5s ease-out forwards;
+}
+
+@keyframes floatFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .greeting-text {
     text-align: center;
     line-height: 1.9;
     color: #555;
     font-size: 15px;
     margin-bottom: 50px;
+    transform: scaleX(0.98);
 }
 
 .greeting-text p {
