@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="이영재 ❤️ 홍선화의 결혼식에 초대합니다">
     <title>이영재 ♥ 홍선화 결혼합니다</title>
 
@@ -14,6 +14,20 @@
     <link rel="stylesheet" href="mobile-style.css">
 </head>
 <body>
+    <!-- 가로 모드 차단 오버레이 -->
+    <div class="landscape-blocker" id="landscapeBlocker">
+        <div class="landscape-content">
+            <div class="rotate-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.5 21.5C4.46 21.5 2 19.04 2 16V8C2 4.96 4.46 2.5 7.5 2.5H16.5C19.54 2.5 22 4.96 22 8V16C22 19.04 19.54 21.5 16.5 21.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.5 21.5L5 19M7.5 21.5L10 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <p class="landscape-text">세로 모드로 전환해주세요</p>
+            <p class="landscape-subtext">청첩장을 보려면 기기를 세로로 돌려주세요</p>
+        </div>
+    </div>
+
     <!-- 스플래시 화면 -->
     <div class="splash-screen" id="splashScreen">
         <div class="splash-overlay"></div>

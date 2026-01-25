@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+/* 이미지 확대 방지 */
+img {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    pointer-events: none;
+}
+
 :root {
     /* 파스텔 초록 컬러 팔레트 */
     --primary-green: #8B9D83;      /* 세이지 그린 - 메인 포인트 */
@@ -23,6 +30,75 @@ body {
     justify-content: center;
     align-items: flex-start;
     color: #333;
+    touch-action: pan-x pan-y;
+    -webkit-touch-callout: none;
+}
+
+/* 가로 모드 차단 오버레이 */
+.landscape-blocker {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6B7D5F 0%, #8B9D83 100%);
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+}
+
+.landscape-content {
+    text-align: center;
+    color: #ffffff;
+    padding: 40px;
+}
+
+.rotate-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 30px;
+    animation: rotatePhone 2s ease-in-out infinite;
+}
+
+.rotate-icon svg {
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+}
+
+.landscape-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.landscape-subtext {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+@keyframes rotatePhone {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-15deg);
+    }
+    75% {
+        transform: rotate(15deg);
+    }
+}
+
+/* 가로 모드일 때 오버레이 표시 */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .landscape-blocker {
+        display: flex;
+    }
 }
 
 /* 스플래시 화면 */
