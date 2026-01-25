@@ -48,6 +48,11 @@ body {
     color: #333;
     touch-action: pan-x pan-y;
     -webkit-touch-callout: none;
+    overflow: hidden; /* 스플래시 중 스크롤 방지 */
+}
+
+body.scroll-enabled {
+    overflow: auto;
 }
 
 /* 가로 모드 차단 오버레이 */

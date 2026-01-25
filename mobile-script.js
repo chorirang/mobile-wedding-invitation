@@ -309,6 +309,8 @@ function removeSplashScreen() {
         // 4.8초 후 스플래시 화면 완전히 제거 (애니메이션 완료 후)
         setTimeout(() => {
             splashScreen.classList.add('hidden');
+            // 스크롤 활성화
+            document.body.classList.add('scroll-enabled');
         }, 4800);
     }
 }
