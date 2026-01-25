@@ -12,6 +12,22 @@ img {
     pointer-events: none;
 }
 
+/* 사파리 자동 링크 스타일 제거 */
+a[href^="tel"],
+a[href^="sms"],
+a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    pointer-events: none;
+}
+
+.account-detail,
+.account-number {
+    color: inherit !important;
+    text-decoration: none !important;
+    -webkit-text-decoration: none !important;
+}
+
 :root {
     /* 파스텔 초록 컬러 팔레트 */
     --primary-green: #8B9D83;      /* 세이지 그린 - 메인 포인트 */
@@ -460,7 +476,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 280px;
+    max-width: 240px;
     margin-left: auto;
     margin-right: auto;
 }
