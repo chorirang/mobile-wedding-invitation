@@ -312,7 +312,7 @@ body.scroll-enabled {
     position: relative;
     width: 100%;
     aspect-ratio: 2 / 3;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .cover-image {
