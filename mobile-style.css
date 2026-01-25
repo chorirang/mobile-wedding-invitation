@@ -290,8 +290,8 @@ body {
 .cover-section {
     position: relative;
     width: 100%;
-    height: 70vh;
-    height: 70svh; /* 작은 뷰포트 높이 (주소 표시줄 제외) */
+    height: 77vh;
+    height: 77svh; /* 작은 뷰포트 높이 (주소 표시줄 제외) */
     overflow: hidden;
 }
 

@@ -223,8 +223,8 @@ function openTmap() {
 function fixViewportHeight() {
     const coverSection = document.querySelector('.cover-section');
     if (coverSection) {
-        // 초기 로드 시 실제 뷰포트 높이를 측정하여 고정 (70% 높이)
-        const vh = window.innerHeight * 0.7;
+        // 초기 로드 시 실제 뷰포트 높이를 측정하여 고정 (77% 높이)
+        const vh = window.innerHeight * 0.77;
         coverSection.style.height = `${vh}px`;
     }
 }
