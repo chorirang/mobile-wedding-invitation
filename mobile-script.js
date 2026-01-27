@@ -278,7 +278,7 @@ function fixViewportHeight() {
 
 // 스플래시 텍스트 한 글자씩 애니메이션
 function animateSplashText() {
-    const text = "평생을 함께할 이 여정의 첫날을 따뜻한 마음으로 축복해주세요.";
+    const text = "평생을 함께할 저희의 첫 날을 함께해주세요.";
     const textElement = document.getElementById('splashText');
 
     if (!textElement) return;
