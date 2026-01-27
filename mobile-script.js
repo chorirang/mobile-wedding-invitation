@@ -40,6 +40,19 @@ function createGallery() {
 
     // 스크롤 이벤트로 도트 업데이트
     initScrollTracking();
+
+    // 갤러리가 뷰포트에 보일 때 첫 사진으로 리셋
+    const galleryObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                gallerySlider.scrollLeft = 0;
+                currentSlide = 0;
+                updateDots();
+                galleryObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.1 });
+    galleryObserver.observe(gallerySlider);
 }
 
 // 스크롤로 특정 슬라이드 이동
