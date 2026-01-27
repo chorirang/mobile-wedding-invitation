@@ -123,7 +123,7 @@ function shareKakao() {
     if (window.Kakao && Kakao.isInitialized()) {
         try {
             Kakao.Share.sendCustom({
-                templateId: 1374585,
+                templateId: 128658,
             });
         } catch (e) {
             console.error('카카오 공유 에러:', e);
