@@ -34,6 +34,10 @@ function createGallery() {
         sliderDots.appendChild(dot);
     });
 
+    // 갤러리 첫 사진으로 초기화
+    gallerySlider.scrollLeft = 0;
+    currentSlide = 0;
+
     // 스크롤 이벤트로 도트 업데이트
     initScrollTracking();
 }
@@ -105,32 +109,17 @@ function fallbackCopy(text) {
 }
 
 // 카카오 SDK 초기화
-if (window.Kakao) {
-    if (!Kakao.isInitialized()) {
-        Kakao.init('ba489fbc39cdfdd5d320a6b2fd840116');
-    }
-    console.log('Kakao SDK 초기화 상태:', Kakao.isInitialized());
-} else {
-    console.error('Kakao SDK 로드 실패');
+if (window.Kakao && !Kakao.isInitialized()) {
+    Kakao.init('ba489fbc39cdfdd5d320a6b2fd840116');
 }
 
 // 카카오톡 공유
 function shareKakao() {
-    console.log('shareKakao 호출됨');
-    console.log('Kakao 객체:', !!window.Kakao);
-    console.log('초기화 상태:', window.Kakao && Kakao.isInitialized());
-
     if (window.Kakao && Kakao.isInitialized()) {
-        try {
-            Kakao.Share.sendCustom({
-                templateId: 128658,
-            });
-        } catch (e) {
-            console.error('카카오 공유 에러:', e);
-            copyLinkWithMessage();
-        }
+        Kakao.Share.sendCustom({
+            templateId: 128658,
+        });
     } else {
-        console.error('Kakao SDK 미초기화 - 링크 복사로 대체');
         copyLinkWithMessage();
     }
 }
