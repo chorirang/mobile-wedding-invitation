@@ -104,26 +104,19 @@ function fallbackCopy(text) {
     document.body.removeChild(textArea);
 }
 
+// 카카오 SDK 초기화
+if (window.Kakao && !Kakao.isInitialized()) {
+    Kakao.init('ba489fbc39cdfdd5d320a6b2fd840116');
+}
+
 // 카카오톡 공유
 function shareKakao() {
-    const shareData = {
-        title: '이영재 ❤️ 홍선화 결혼식에 초대합니다',
-        text: '2026년 5월 16일 토요일 오후 4시 20분\n천호 라비니움 4층 블룸홀',
-        url: window.location.href
-    };
-
-    // 모바일에서 Web Share API 사용 (카카오톡 포함 다양한 앱 선택 가능)
-    if (navigator.share) {
-        navigator.share(shareData).then(() => {
-            console.log('공유 성공');
-        }).catch((error) => {
-            // 사용자가 취소한 경우는 무시
-            if (error.name !== 'AbortError') {
-                copyLinkWithMessage();
-            }
+    if (window.Kakao && Kakao.isInitialized()) {
+        Kakao.Share.sendCustom({
+            templateId: 1374585,
         });
     } else {
-        // Web Share API 미지원 시 링크 복사
+        // SDK 로드 실패 시 링크 복사로 대체
         copyLinkWithMessage();
     }
 }
@@ -297,7 +290,7 @@ function animateSplashText() {
     text.split('').forEach((char, index) => {
         const span = document.createElement('span');
         span.textContent = char === ' ' ? '\u00A0' : char; // 공백 처리
-        span.style.animationDelay = `${1.0 + (index * 0.08)}s`; // 1초 후 시작, 각 글자마다 0.08초 간격
+        span.style.animationDelay = `${0.8 + (index * 0.06)}s`; // 0.8초 후 시작, 각 글자마다 0.06초 간격
         textElement.appendChild(span);
     });
 }
@@ -306,12 +299,12 @@ function animateSplashText() {
 function removeSplashScreen() {
     const splashScreen = document.getElementById('splashScreen');
     if (splashScreen) {
-        // 4.8초 후 스플래시 화면 완전히 제거 (애니메이션 완료 후)
+        // 3.8초 후 스플래시 화면 완전히 제거 (애니메이션 완료 후)
         setTimeout(() => {
             splashScreen.classList.add('hidden');
             // 스크롤 활성화
             document.body.classList.add('scroll-enabled');
-        }, 4800);
+        }, 3800);
     }
 }
 
@@ -321,7 +314,7 @@ function initLazyGif() {
 
     if (!lazyGif) return;
 
-    // 스플래시 종료 후 (4.8초) GIF 로드
+    // 스플래시 종료 후 (3.8초) GIF 로드
     setTimeout(() => {
         const src = lazyGif.getAttribute('data-src');
 
@@ -330,11 +323,25 @@ function initLazyGif() {
             lazyGif.classList.remove('lazy-gif');
             lazyGif.classList.add('gif-loaded');
         }
-    }, 4800);
+    }, 3800);
 }
+
+// 페이지 로드 시 스크롤 최상단으로 이동
+window.history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
 
 // 페이지 로드 시 실행
 document.addEventListener('DOMContentLoaded', () => {
+    // 스크롤 최상단으로
+    window.scrollTo(0, 0);
+
+    // 갤러리 슬라이더도 처음으로
+    const gallerySlider = document.getElementById('gallerySlider');
+    if (gallerySlider) {
+        gallerySlider.scrollLeft = 0;
+    }
+    currentSlide = 0;
+
     // 스플래시 텍스트 애니메이션
     animateSplashText();
 
