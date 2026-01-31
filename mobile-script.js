@@ -1,17 +1,20 @@
 // 갤러리 슬라이더 변수
 let currentSlide = 0;
 const imageUrls = [
+    '들판1.jpg',
+    '들판2.jpg',
+    '들판3.jpg',
+    '들판4.jpg',
+    '들판5.jpg',
+    '들판6.jpg',
+    '들판7.jpg',
+    '들판8.jpg',
     '나무1.jpg',
     '나무2.jpg',
-    '나무3-2.jpg',
     '나무3.jpg',
-    '나무4.jpg',
-    '나무5.jpg',
-    '바다1-2.jpg',
     '바다1.jpg',
     '바다2.jpg',
-    '바다3-2.jpg',
-    '바다4.jpg'
+    '바다3.jpg'
 ];
 const totalSlides = imageUrls.length;
 

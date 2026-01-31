@@ -673,6 +673,21 @@ section {
     color: white;
     font-weight: 700;
     box-shadow: 0 2px 8px rgba(139, 157, 131, 0.3);
+    position: relative;
+    overflow: visible;
+}
+
+.calendar-time {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    color: #888;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 /* 갤러리 섹션 */
