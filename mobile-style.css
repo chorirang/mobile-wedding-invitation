@@ -919,15 +919,38 @@ section {
     font-size: 16px;
     font-weight: 600;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     padding-bottom: 15px;
     border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.account-toggle {
+    color: #bbb;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.account-header.open .account-toggle {
+    transform: rotate(180deg);
 }
 
 .account-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    overflow: hidden;
+    max-height: 500px;
+    transition: max-height 0.3s ease, margin-top 0.3s ease;
+    margin-top: 20px;
+}
+
+.account-list.collapsed {
+    max-height: 0;
+    margin-top: 0;
 }
 
 .account-item {

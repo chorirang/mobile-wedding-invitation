@@ -279,11 +279,12 @@
             </p>
 
             <div class="account-group">
-                <div class="account-header">
+                <div class="account-header" onclick="toggleAccount(this)">
                     <span>신랑측</span>
+                    <svg class="account-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
 
-                <div class="account-list">
+                <div class="account-list collapsed">
                     <div class="account-item">
                         <div class="account-info">
                             <p class="account-name">신랑 이영재</p>
@@ -307,11 +308,12 @@
             </div>
 
             <div class="account-group">
-                <div class="account-header">
+                <div class="account-header" onclick="toggleAccount(this)">
                     <span>신부측</span>
+                    <svg class="account-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </div>
 
-                <div class="account-list">
+                <div class="account-list collapsed">
                     <div class="account-item">
                         <div class="account-info">
                             <p class="account-name">신부 홍선화</p>
@@ -331,11 +333,11 @@
                             복사
                         </button>
                     </div>
-                     <div class="account-list">
+
                     <div class="account-item">
                         <div class="account-info">
                             <p class="account-name">어머니 김혜정</p>
-                            <p class="account-detail">국민은행 992801-01-059044 </p>
+                            <p class="account-detail">국민은행 992801-01-059044</p>
                         </div>
                         <button class="btn-account-copy" onclick="copyAccount('99280101059044')">
                             복사

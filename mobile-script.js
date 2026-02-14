@@ -1,3 +1,10 @@
+// 계좌번호 접힘/펼침
+function toggleAccount(header) {
+    const list = header.nextElementSibling;
+    header.classList.toggle('open');
+    list.classList.toggle('collapsed');
+}
+
 // 갤러리 슬라이더 변수
 let currentSlide = 0;
 const imageUrls = [
