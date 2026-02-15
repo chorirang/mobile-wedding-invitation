@@ -19,9 +19,12 @@ const imageUrls = [
     '나무1.jpg',
     '나무2.jpg',
     '나무3.jpg',
+    '나무4.jpg',
+    '나무5.jpg',
     '바다1.jpg',
     '바다2.jpg',
-    '바다3.jpg'
+    '바다3.jpg',
+    '바다4.jpg'
 ];
 const totalSlides = imageUrls.length;
 
