@@ -257,8 +257,21 @@ function openKakaoMap() {
 }
 
 function openNaverMap() {
-    const naverMapUrl = 'https://map.naver.com/p/entry/place/1485729416';
-    window.open(naverMapUrl, '_blank');
+    const placeId = '1485729416';
+    const webUrl = 'https://map.naver.com/p/entry/place/' + placeId;
+
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        // 네이버지도 앱 딥링크
+        const appScheme = 'nmap://place?id=' + placeId + '&name=라비니움&appname=kr.co.wedding';
+        window.location.href = appScheme;
+
+        // 앱 없으면 웹으로 fallback
+        setTimeout(() => {
+            window.open(webUrl, '_blank');
+        }, 1500);
+    } else {
+        window.open(webUrl, '_blank');
+    }
 }
 
 function openTmap() {
