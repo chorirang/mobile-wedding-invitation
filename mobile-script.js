@@ -257,12 +257,7 @@ function openKakaoMap() {
 }
 
 function openNaverMap() {
-    const venueName = '라비니움';
-    const address = '서울특별시 송파구 천호대로 996';
-
-    // 네이버 지도 앱/웹 URL
-    const naverMapUrl = `https://map.naver.com/p/search/${encodeURIComponent(venueName + ' ' + address)}`;
-
+    const naverMapUrl = 'https://map.naver.com/p/entry/place/1485729416';
     window.open(naverMapUrl, '_blank');
 }
 
