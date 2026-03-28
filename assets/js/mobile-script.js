@@ -8,23 +8,23 @@ function toggleAccount(header) {
 // 갤러리 슬라이더 변수
 let currentSlide = 0;
 const imageUrls = [
-    '들판1.jpg',
-    '들판2.jpg',
-    '들판3.jpg',
-    '들판4.jpg',
-    '들판5.jpg',
-    '들판6.jpg',
-    '들판7.jpg',
-    '들판8.jpg',
-    '나무1.jpg',
-    '나무2.jpg',
-    '나무3.jpg',
-    '나무4.jpg',
-    '나무5.jpg',
-    '바다1.jpg',
-    '바다2.jpg',
-    '바다3.jpg',
-    '바다4.jpg'
+    'assets/images/들판1.jpg',
+    'assets/images/들판2.jpg',
+    'assets/images/들판3.jpg',
+    'assets/images/들판4.jpg',
+    'assets/images/들판5.jpg',
+    'assets/images/들판6.jpg',
+    'assets/images/들판7.jpg',
+    'assets/images/들판8.jpg',
+    'assets/images/나무1.jpg',
+    'assets/images/나무2.jpg',
+    'assets/images/나무3.jpg',
+    'assets/images/나무4.jpg',
+    'assets/images/나무5.jpg',
+    'assets/images/바다1.jpg',
+    'assets/images/바다2.jpg',
+    'assets/images/바다3.jpg',
+    'assets/images/바다4.jpg'
 ];
 const totalSlides = imageUrls.length;
 
@@ -387,6 +387,16 @@ document.addEventListener('DOMContentLoaded', () => {
     initLazyGif();
 
     console.log('모바일 청첩장이 로드되었습니다');
+});
+
+// 모든 이미지 로드 완료 후 갤러리 첫 슬라이드로 재초기화
+window.addEventListener('load', () => {
+    const gallerySlider = document.getElementById('gallerySlider');
+    if (gallerySlider) {
+        gallerySlider.scrollLeft = 0;
+        currentSlide = 0;
+        updateDots();
+    }
 });
 
 // 화면 방향 변경 시에만 높이 재조정
