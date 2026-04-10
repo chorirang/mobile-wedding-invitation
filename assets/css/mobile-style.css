@@ -872,6 +872,31 @@ section {
     border-top: 1px solid rgba(139, 157, 131, 0.2);
 }
 
+.parking-notice {
+    background-color: rgba(107, 125, 95, 0.08);
+    border: 1px solid rgba(107, 125, 95, 0.2);
+    border-left: 3px solid var(--dark-sage);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.parking-notice-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-sage);
+    letter-spacing: 0.5px;
+    margin: 0 0 8px 0;
+}
+
+.parking-notice-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #3a3a3a;
+    margin: 0;
+}
+
 .parking-guide-title {
     font-size: 16px;
     font-weight: 600;
